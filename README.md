@@ -7,22 +7,29 @@
 
 > Site de commande en ligne pour épicerie ambulante
 
-# Install dependencies
+## Install
+
+```sh
 composer install
-# AND
 yarn install
+```
 
-# Create DB
+## Database creation
+
+```sh
 php bin/console d:d:c
+```
 
-# Create migrations
+## Migration database creation
+
+```sh
 php bin/console make:migration
+```
 
-# Execute migrations and create tables
+## Migration execution
+
+```sh
 php bin/console d:migration:migrate
-
-# Execute fixtures
-php bin/console d:f:l
 ```
 
 ## Author
