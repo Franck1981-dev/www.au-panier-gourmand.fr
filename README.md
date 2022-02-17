@@ -7,17 +7,29 @@
 
 > Site de commande en ligne pour épicerie ambulante
 
-## Install
-
-```sh
+# Install dependencies
+composer install
+# AND
 yarn install
+
+# Create DB
+php bin/console d:d:c
+
+# Create migrations
+php bin/console make:migration
+
+# Execute migrations and create tables
+php bin/console d:migration:migrate
+
+# Execute fixtures
+php bin/console d:f:l
 ```
 
 ## Author
 
 👤 **FB Developpement**
 
-* Website: FB Developpement
+* Website: FB-Developpement.com
 * Github: [@Franck1981-dev](https://github.com/ranck1981-dev)
 * LinkedIn: [@Franck BOUCHET](https://linkedin.com/in/Franck BOUCHET)
 
