@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %} {% block title %}Se connecter{% endblock %} {% block body %}
+<form method="post">
+    {% if error %}
+    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %} {% if app.user %}
+    <div class="pl-5 mb-3">
+        Vous êtes connecté en tant que: <b>{{ app.user.username }}</b>, si vous souhaitez vous déconnecter, veuillez cliquer ci-après<a class="btn text-white btn-lg text-center m-3" style="background-color: #0e4700;" href="{{ path('app_logout') }}">Déconnexion</a>
+    </div>
+    {% endif %}
+    <div class="m-3 text-center">
+        <h1 class="h3 m-5 font-weight-normal"><i class="fa fa-lock" aria-hidden="true"> Veuillez vous connecter:</i></h1>
+        <label for="inputEmail" class="m-3 text-center" width="50%">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <label for="inputPassword" class="m-3 text-center">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality. See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+        #}
+
+        <button class="btn text-white btn-lg text-center m-3 rounded" style="background-color: #0e4700;" type="submit">
+            Connexion
+        </button>
+    </div>
+</form>
+<div class="return">
+    <a href=" {{ path( 'home') }} " class="p-3 text-center ">Retour à l'accueil</a>
+</div>
+<div class="return">
+    <a class="btn" style="background-color: grey; color: black" href=" {{ path( 'app_forgot_password_request') }} ">Réinitialiser son mot de passe</a>
+</div>{% endblock %}

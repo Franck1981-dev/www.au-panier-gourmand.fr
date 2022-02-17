@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %} {% block title %}Catégories{% endblock %} {% block body %}
+<h1 class="pb-3" style="text-decoration:underline">Toutes les Catégories: </h1>
+{% for category in categories %}
+<div class="p-3">
+    <h2 style="font-size:35px;">{{ category.name }} </h2>
+    <a href="{{ path('category_show', { 'categoryName': category.name }) }} " style="font-size:25px;">Voir les produits de la catégorie {{ category.name }}</a>
+</div>
+{% else %} Aucune Catégorie trouvée. {% endfor %}
+<div class="p-3">
+    <a href="{{ path('category_index') }}" style="font-size:25px;">
+    Retour à la liste des catégories
+    </a>
+</div>{% endblock %}

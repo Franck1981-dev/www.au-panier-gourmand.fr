@@ -1,0 +1,14 @@
+{# DO THIS: the '!' symbol tells Symfony to extend from the original template #} {% extends '@!EasyAdmin/layout.html.twig' %} {% block main %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('build/admin.css') }}">
+    <link rel="icon" href="{{ asset( 'build/panier-garni-gauche-1.png') }}"> {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #} {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %} {% block javascripts %} {{ encore_entry_script_tags('app') }} {% endblock %}
+</head>
+<h2 class="dashboard">Bienvenue sur la partie administration du site "
+    <U>Au Panier Gourmand</U> " !</h2><br>
+<p>Vous avez {{ users }} utilisateur(s) enregistré(s) sur votre site.</p>
+{% endblock %}

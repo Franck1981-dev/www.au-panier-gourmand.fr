@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %} {% block title %}Conditions Générales de Ventes{% endblock %} {% block body %}
+<div class="container">
+    {% for cgv in cgv %}
+    <h1 class="titre my-5">{{cgv.name}}:</h1>
+    <p class="paragraph my-5">{{cgv.description|raw}}</p>
+    {% endfor %}
+</div>{% endblock %}

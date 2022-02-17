@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "CursiveStandardBold";
+    src: url("/home/user/Bureau/www.au-panier-gourmand.fr/www.au-panier-gourmand.fr/assets/font/CursiveStandardBold.ttf") format("truetype");
+}
+
+body {
+    background-color: #fdf1ca;
+}
+
+.sidebar {
+    background-color: #fdf1ca;
+}
+
+.content-header {
+    background-color: #fdf1ca;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: center;
+    color: #0e4700;
+    font-size: 30px;
+}
+
+.logo-custom {
+    color: #0e4700;
+    font-family: "CursiveStandardBold";
+    font-size: 20px;
+}
+
+.title {
+    color: #0e4700;
+    font-family: "CursiveStandardBold";
+    font-size: 20px;
+}
+
+.action-new {
+    background-color: #0e4700;
+    color: #fdf1ca;
+    font-family: "CursiveStandardBold";
+    font-size: 16px;
+}
+
+.menu-item {
+    color: #0e4700;
+    font-family: "CursiveStandardBold";
+    font-size: 16px;
+}
+
+.dashboard {
+    color: #0e4700;
+    font-family: "CursiveStandardBold";
+    font-size: 35px;
+}

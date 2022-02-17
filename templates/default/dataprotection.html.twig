@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %} {% block title %}Protection des données{% endblock %} {% block body %}
+<div class="container">
+    {% for dataprotection in dataprotection %}
+    <h1 class="titre my-5">{{dataprotection.name}}:</h1>
+    <p class="paragraph my-5">{{dataprotection.description|raw}}</p>
+    {% endfor %}
+</div>{% endblock %}

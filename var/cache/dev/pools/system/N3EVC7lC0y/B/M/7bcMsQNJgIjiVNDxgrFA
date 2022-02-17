@@ -1,0 +1,36 @@
+<?php //App%255CEntity%255COrder%2524cartTotal
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\OneToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToOne')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'targetEntity' => [
+                'App\\Entity\\Cart',
+            ],
+            'cascade' => [
+                [
+                    'persist',
+                    'remove',
+                ],
+            ],
+            'type' => [
+                1 => 'decimal',
+            ],
+            'precision' => [
+                1 => 10,
+            ],
+            'scale' => [
+                1 => 2,
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

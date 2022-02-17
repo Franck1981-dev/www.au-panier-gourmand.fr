@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %} {% block title %}Au Panier Gourmand | {{ category.name }}{% endblock %} {% block body %}
+<div class="home">
+    <a href=" {{ path( 'home') }} " class="p-3 text-center ">Retour <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+</div>
+<div class="pageTitle">
+    <h1>Liste des produits:</h1>
+</div>
+
+<div id="store" class="m-5">
+    {% for product in products %}
+    <section data-food="produit" class="row">
+        <article class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{product.image}}" title="Image produit" alt="{{product.name}}">
+                    <h3>{{product.name}}</h3>
+                </div>
+                <div class="card-content">
+                    <p>
+                        {{product.description|raw }}
+                    </p>
+                    <p>
+                        <b>{{product.price }} €</b>
+                    </p>
+                    <p>
+                        Nombre de produits disponibles: <b>{{ product.stock }}</b>.
+                    </p>
+                </div>
+                <div>
+                    <a href="{{path('cart_add' , {id: product.id})}} " class="btn btn-success "><i class="fa fa-cart-plus " aria-hidden="true "></i></a>
+                </div>
+        </article>
+    </section>
+    {% else %}
+    <div class="p-3 text-center "> Aucun produit trouvé dans la catégorie <b>"{{ category.name }}"</b></div>{% endfor %}
+    </div>
+    <div class="return">
+        <a href=" {{ path( 'home') }} " class="p-3 text-center ">Retour à l'accueil</a>
+    </div>{% endblock %}

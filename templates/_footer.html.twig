@@ -1,0 +1,24 @@
+{% block footer %}
+<div class="footer">
+    <!--Grid column-->
+    <ul>
+        <a id="back-to-top" href="#" class="btn back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+
+        <li>
+            <a href="{{ path('shipping_index') }}">Livraison</a>
+        </li>
+        <li>
+            <a href="">Contact</a>
+        </li>
+        <li>
+            <a href="{{ path('cgv') }}">Conditions Générales de Ventes</a>
+        </li>
+        <li>
+            <a href="{{ path('dataprotection') }}">Politique de protection des données</a>
+        </li>
+        <div class="copyright pt-2">
+            © Copyright 2022 - Franck BOUCHET Développement - Tous droits réservés
+        </div>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
+    <title>{% block title %}Au Panier Gourmand{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{ asset( 'build/panier-garni-gauche-1.png') }}"> {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #} {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %} {% block javascripts %} {{ encore_entry_script_tags('app') }} {% endblock %}
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="log col-3">
+            <a href="{{ path('app_login') }}"><i class="fas fa-sign-in-alt"></i></a>
+        </div>
+        <div class="register col-3">
+            <a href="{{ path('app_register') }}"><i class="fa fa-user-plus"></i></a>
+        </div>
+        <div class="cart col-3">
+            <a href="{{ path('cart_index') }}"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <div class="logout col-3">
+            <a href="{{ path('app_logout') }}"><i class="fa fa-sign-out"></i></a>
+        </div>
+    </div>
+
+    <header class="mb-5 ">{% include '_navbar.html.twig' %}</header>
+
+    {% block body %}{% endblock %}
+
+    <footer>{% include '_footer.html.twig' %}</footer>
+    <script src="https://kit.fontawesome.com/2d0e64c378.js " crossorigin="anonymous "></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
+    <script src="{{ asset( 'build/app.js') }} "></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12 "></script>
+    <script src="./typed.js-master/lib/typed.min.js "></script>
+    <script src=" {{ asset( 'build/backToTop.js') }} "></script>
+    <script src=" {{ asset( 'build/cart.js') }}"></script>
+    <script type='text/javascript' src='/media/plugin_googlemap3/site/googlemaps/googlemapsv3.js'></script>
+</body>
+
+</html>
