@@ -32,6 +32,13 @@ php bin/console make:migration
 php bin/console d:migration:migrate
 ```
 
+## Usage
+
+```sh
+yarn encore dev 
+symfony server:start
+```
+
 ## Author
 
 👤 **FB Developpement**
